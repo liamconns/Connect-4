@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Liam's Connect 4</title>
+
+    <script src="cfour.js"></script>
+
+    <style>
+
+        div {
+            color:dodgerblue;
+        }
+
+        h1 {
+             color: black;
+             font-family: 'Times New Roman', Times, serif;
+             font-size: 300%;
+        }
+
+        .cell {
+            border: 10px solid #1E90FF;
+			height: 42px;
+			width: 42px;
+        }
+
+		.player0 {
+			background-color: #FFFAFA; 
+		}
+			
+	
+		.player1 {
+			background-color: #FF0000;
+		}
+			
+		.player2 {
+			background-color: rgb(255, 238, 0);	
+        }
+			
+			
+		.piece {
+			height: 38px;
+			width: 38px;
+			display:block;
+			border-radius: 22px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+    </style>
+
+
+
+</head>
+
+
+<body onload="play();"></body>
+
+   
+   
+
+    <div class = "center">
+
+        <h1>Welcome to Connect 4!</h1>
+       
+
+        <button id="begin_game" onclick="play();">New Game</button>
+        <p>  </p>
+
+        <!-- Connect4 resembles a table so that is what I ended up using
+        I had to give each cell an individual coordinate in order for the pieces to be correctly placed
+        -->
+
+        <table id="connectFourTable" style="background-color:dodgerblue" >
+
+            <thead>
+                <tr> 
+                    <td><button onclick="drop(0);">Drop</button></td>
+                    <td><button onclick="drop(1);">Drop</button></td>
+                    <td><button onclick="drop(2);">Drop</button></td>
+                    <td><button onclick="drop(3);">Drop</button></td>
+                    <td><button onclick="drop(4);">Drop</button></td>
+                    <td><button onclick="drop(5);">Drop</button></td>
+                    <td><button onclick="drop(6);">Drop</button></td>
+                </tr>
+            </thead>
+
+            <tr>
+                <td id='cell_0_0' class='cell'></td>
+                <td id='cell_0_1' class='cell'></td>
+                <td id='cell_0_2' class='cell'></td>
+                <td id='cell_0_3' class='cell'></td>
+                <td id='cell_0_4' class='cell'></td>
+                <td id='cell_0_5' class='cell'></td>
+                <td id='cell_0_6' class='cell'></td>
+            </tr>
+
+            <tr>
+                <td id='cell_1_0' class='cell'></td>
+                <td id='cell_1_1' class='cell'></td>
+                <td id='cell_1_2' class='cell'></td>
+                <td id='cell_1_3' class='cell'></td>
+                <td id='cell_1_4' class='cell'></td>
+                <td id='cell_1_5' class='cell'></td>
+                <td id='cell_1_6' class='cell'></td>
+            </tr>
+               
+            <tr>
+                <td id='cell_2_0' class='cell'></td>
+                <td id='cell_2_1' class='cell'></td>
+                <td id='cell_2_2' class='cell'></td>
+                <td id='cell_2_3' class='cell'></td>
+                <td id='cell_2_4' class='cell'></td>
+                <td id='cell_2_5' class='cell'></td>
+                <td id='cell_2_6' class='cell'></td>
+            </tr>
+
+            <tr>
+                <td id='cell_3_0' class='cell'></td>
+                <td id='cell_3_1' class='cell'></td>
+                <td id='cell_3_2' class='cell'></td>
+                <td id='cell_3_3' class='cell'></td>
+                <td id='cell_3_4' class='cell'></td>
+                <td id='cell_3_5' class='cell'></td>
+                <td id='cell_3_6' class='cell'></td>
+            </tr>
+                
+            <tr>
+                <td id='cell_4_0' class='cell'></td>
+                <td id='cell_4_1' class='cell'></td>
+                <td id='cell_4_2' class='cell'></td>
+                <td id='cell_4_3' class='cell'></td>
+                <td id='cell_4_4' class='cell'></td>
+                <td id='cell_4_5' class='cell'></td>
+                <td id='cell_4_6' class='cell'></td>
+            </tr>
+
+            <tr>
+                <td id='cell_5_0' class='cell'></td>
+                <td id='cell_5_1' class='cell'></td>
+                <td id='cell_5_2' class='cell'></td>
+                <td id='cell_5_3' class='cell'></td>
+                <td id='cell_5_4' class='cell'></td>
+                <td id='cell_5_5' class='cell'></td>
+                <td id='cell_5_6' class='cell'></td>
+            </tr>
+
+        </table>
+
+    </div>
+    
+</body>
+
+</html>
